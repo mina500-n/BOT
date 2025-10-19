@@ -1,0 +1,14 @@
+# /etc/systemd/system/tg-wa-bot.service (مثال - عدل المسارات قبل الاستخدام)
+[Unit]
+Description=Telegram -> WhatsApp Channel Bot
+After=network.target
+
+[Service]
+User=youruser
+WorkingDirectory=/path/to/project
+ExecStart=/path/to/project/venv/bin/python /path/to/project/bot.py
+Restart=always
+EnvironmentFile=/path/to/project/.env
+
+[Install]
+WantedBy=multi-user.target
